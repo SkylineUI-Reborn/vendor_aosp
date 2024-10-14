@@ -65,7 +65,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Vendor_045e_Product_0719.kl
 
 # Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED ?= $(TARGET_SUPPORTS_64_BIT_APPS)
+TARGET_FACE_UNLOCK_SUPPORTED ?= true
 
 ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
 PRODUCT_PACKAGES += \
@@ -248,6 +248,11 @@ CUSTOM_LOCALES += \
     gd_GB \
     cy_GB \
     fur_IT
+
+# Google mobile services flags
+TARGET_INCLUDE_STOCK_ARCORE ?= true
+TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
+TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
 
 include vendor/aosp/config/version.mk
 
